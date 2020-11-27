@@ -3,12 +3,12 @@ entries:
   wrong-image-name:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-11-27T22:40:33.13383+08:00"
+    created: "2020-11-27T23:01:07.513156+08:00"
     description: A Helm chart for Kubernetes
-    digest: 833bddfd213d6aef308579897f73f205f4da73aa8020aae8f038b9683ac39e69
+    digest: 9bec2f97eb015c199c6b3656d34a8830da0cc59e6a5c71fc92deb862972f2d82
     name: wrong-image-name
     type: application
     urls:
     - https://poyiya.github.io/charts/wrong-image-name-0.1.0.tgz
     version: 0.1.0
-generated: "2020-11-27T22:40:33.132199+08:00"
+generated: "2020-11-27T23:01:07.511528+08:00"
