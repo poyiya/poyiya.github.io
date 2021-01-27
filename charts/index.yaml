@@ -1,9 +1,20 @@
 apiVersion: v1
 entries:
+  fail-manytimes:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2021-01-27T15:40:09.096566+08:00"
+    description: A Helm chart for Kubernetes
+    digest: edf4e7cb5d64ea6adad4cd9f600542acd2351315c39a4e0baff4a21703a275dc
+    name: fail-manytimes
+    type: application
+    urls:
+    - https://poyiya.github.io/charts/fail-manytimes-0.0.1.tgz
+    version: 0.0.1
   gpu-hog:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-12-13T13:59:04.678213+08:00"
+    created: "2021-01-27T15:40:09.097736+08:00"
     description: A Helm chart to produce non-stopping gpu workload
     digest: 4658f5ffdf4d8a1a7dcd47a8fff3954d061739a9beadd5e3b3f819f55d74e96c
     name: gpu-hog
@@ -13,7 +24,7 @@ entries:
   wrong-image-name:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-12-13T13:59:04.678945+08:00"
+    created: "2021-01-27T15:40:09.098616+08:00"
     description: A Helm chart for Kubernetes
     digest: dbec994ff118f12ffc430d9d0a5ddded30d31709db7673cf7424797da1ccc0bb
     name: wrong-image-name
@@ -21,4 +32,4 @@ entries:
     urls:
     - https://poyiya.github.io/charts/wrong-image-name-0.1.0.tgz
     version: 0.1.0
-generated: "2020-12-13T13:59:04.676109+08:00"
+generated: "2021-01-27T15:40:09.094889+08:00"
