@@ -1,0 +1,5 @@
+image: "nginx"
+nodePort: "32001"
+background: "blue"
+title: "Automation Nginx"
+content: "Automation"
