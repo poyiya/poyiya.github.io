@@ -1,0 +1,11 @@
+image:
+  repository: nvcr.io/nvidia/k8s/cuda-sample
+  tag: vectoradd-cuda11.2.1
+
+gpuType: nvidia.com/gpu
+numGPUs: 1
+
+replicas: 1
+
+# used for forcing a mig config error for test purposes
+forceMigError: false

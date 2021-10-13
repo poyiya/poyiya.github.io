@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gpuapp-dep
+spec:
+  selector:
+    matchLabels:
+      app: gpuapp
+  replicas: {{ .Values.replicas }}
+  template:
+    metadata:
+      labels:
+        app: gpuapp
+    spec:
+{{- if .Values.forceMigError }}
+      tolerations:
+      - effect: NoExecute
+        key: CriticalAddonsOnly
+        operator: Equal
+        value: "gpusUnavailable"
+{{- end }}
+      containers:
+      - name: vectoradd
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        resources:
+          limits:
+            {{ .Values.gpuType  }}: {{ .Values.numGPUs  }}
+        command:
+          - /bin/bash
+          - -c
+          - |
+            echo "Running vectorAdd every 2 seconds"
+            while true; do /tmp/vectorAdd; sleep 2; done
