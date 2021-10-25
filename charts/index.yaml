@@ -3,7 +3,7 @@ entries:
   fail-manytimes:
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2021-10-13T14:52:42.430003+08:00"
+    created: "2021-10-25T16:09:21.31968+08:00"
     description: A Helm chart for Kubernetes
     digest: edf4e7cb5d64ea6adad4cd9f600542acd2351315c39a4e0baff4a21703a275dc
     name: fail-manytimes
@@ -14,9 +14,10 @@ entries:
   gpu-hog:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-10-13T14:52:42.430511+08:00"
-    description: A Helm chart to produce non-stopping gpu workload
-    digest: 4658f5ffdf4d8a1a7dcd47a8fff3954d061739a9beadd5e3b3f819f55d74e96c
+    created: "2021-10-25T16:09:21.31994+08:00"
+    description: A Helm chart to produce non-stopping pytorch workloads that saturate
+      GPUs
+    digest: 208e2239bb25606e54cd9a7383ed3387769d3bf13edded70d01c6a8fc3564e59
     name: gpu-hog
     urls:
     - https://poyiya.github.io/charts/gpu-hog-0.1.0.tgz
@@ -24,7 +25,7 @@ entries:
   tdcsqa-auto-nginx:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-10-13T14:52:42.431012+08:00"
+    created: "2021-10-25T16:09:21.320842+08:00"
     description: A Helm chart for Kubernetes
     digest: 9bf850c3e371718221b5ceb526a9b0bb8a781db3914f39666255e9a7271f2f25
     name: tdcsqa-auto-nginx
@@ -34,7 +35,7 @@ entries:
   vectoradd-app:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-10-13T14:52:42.431483+08:00"
+    created: "2021-10-25T16:09:21.321908+08:00"
     description: A Helm chart to exercise GPUs
     digest: 1950ef0a89c12b6fc50b0aee97bfd2c3d23a194e3bccd003d03b4addf37aebcb
     name: vectoradd-app
@@ -44,7 +45,7 @@ entries:
   wrong-image-name:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-10-13T14:52:42.434807+08:00"
+    created: "2021-10-25T16:09:21.324373+08:00"
     description: A Helm chart for Kubernetes
     digest: dbec994ff118f12ffc430d9d0a5ddded30d31709db7673cf7424797da1ccc0bb
     name: wrong-image-name
@@ -52,4 +53,4 @@ entries:
     urls:
     - https://poyiya.github.io/charts/wrong-image-name-0.1.0.tgz
     version: 0.1.0
-generated: "2021-10-13T14:52:42.42707+08:00"
+generated: "2021-10-25T16:09:21.317327+08:00"

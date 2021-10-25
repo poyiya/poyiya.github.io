@@ -1,3 +1,6 @@
 image:
-  repository: pytorch/pytorch
-  tag: latest
+  repository: nvcr.io/nvidia/pytorch
+  tag: 21.04-py3
+
+gpuType: nvidia.com/gpu
+numGPUs: 1

@@ -1,5 +1,15 @@
+# This chart is hosted at https://helm.ngc.nvidia.com/nvegx/gpu-hog. It is used
+# in integratoin test. To update:
+#
+# 1. Modify code under this directory, and commit the change
+# 2. Make sure manually bump the version field in Chart.yaml
+# 3. Within int shell:
+#    cd /egx/deployments/gpu-hog
+#    helm package .
+#    helm push "gpu-hog-<version>.tgz" nvcrio
+# 4. Make sure the references in int test scripts t_* is using the updated version
 apiVersion: v1
 appVersion: "1.0"
-description: A Helm chart to produce non-stopping gpu workload
+description: A Helm chart to produce non-stopping pytorch workloads that saturate GPUs
 name: gpu-hog
 version: 0.1.0

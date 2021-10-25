@@ -15,30 +15,53 @@ spec:
         app.kubernetes.io/name: {{ include "gpu-hog.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
-      nodeSelector:
-        nodeType: gpu
       terminationGracePeriodSeconds: 5
       containers:
       - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         name: tf
         resources:
           limits:
-            nvidia.com/gpu: 1
+            {{ .Values.gpuType  }}: {{ .Values.numGPUs  }}
         command:
         - "python"
         - "-c"
         - |
           import torch
+          from datetime import datetime
           N = 2000
-          interval = 1000
-          device = torch.device('cuda')
-          x = torch.zeros(N, N, device=device).uniform_(-1.0, 1.0)
-          y = torch.zeros(N, N, device=device).uniform_(-1.0, 1.0)
+          interval = 10000
+          num_devices = torch.cuda.device_count()
+          devices = ["cuda:{}".format(i) for i in range(num_devices)]
+          xs = [torch.zeros(N, N, device=torch.device(d)).uniform_(-1.0, 1.0) for d in devices ]
+          ys = [torch.zeros(N, N, device=torch.device(d)).uniform_(-1.0, 1.0) for d in devices ]
           count = 0
           while True:
-            x.add_(y)
+            for x, y in ((xs[i],ys[i]) for i in range(num_devices)):
+              x.add_(y)
             count = count +1
             if count % interval == 0:
-              print(x)
-              x.uniform_(-1.0, 1.0)
-              y.uniform_(-1.0, 1.0)
+              print('Iteration {} completed at {}'.format(count, datetime.utcnow()), flush=True)
+              for x, y in ((xs[i],ys[i]) for i in range(num_devices)):
+                # print('x:', x)
+                x.uniform_(-1.0, 1.0)
+                y.uniform_(-1.0, 1.0)
+              # Consider sanity check passed once we are able to do 5 times
+              if count / interval >= 5:
+                with open('/tmp/live', 'w') as f:
+                  f.write("true\n")
+        livenessProbe:
+          exec:
+            command:
+            - bash
+            - -c
+            - '[[ "$(cat /tmp/live)" = "true" ]]'
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        readinessProbe:
+          exec:
+            command:
+            - bash
+            - -c
+            - '[[ "$(cat /tmp/live)" = "true" ]]'
+          initialDelaySeconds: 5
+          periodSeconds: 5
