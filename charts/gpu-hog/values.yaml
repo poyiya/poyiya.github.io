@@ -4,3 +4,6 @@ image:
 
 gpuType: nvidia.com/gpu
 numGPUs: 1
+
+# used for forcing a mig config error for test purposes
+forceMigError: false
