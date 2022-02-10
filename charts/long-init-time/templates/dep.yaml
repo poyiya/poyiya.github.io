@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: delay-init-app
+  labels:
+    app: delay-init-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: delay-init-app
+  template:
+    metadata:
+      labels:
+        app: delay-init-app
+    spec:
+      containers:
+      - name: multi
+        image: "quay.io/openshift-examples/multi-arch:multi"
+        command: ["/bin/bash", "-c", "sleep 3600"]
+      initContainers:
+      - name: init-delay
+        image: "quay.io/openshift-examples/multi-arch:multi"
+        command: ["/bin/bash", "-c", "sleep 100"]
