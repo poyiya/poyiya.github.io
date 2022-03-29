@@ -62,7 +62,7 @@ spec:
             - bash
             - -c
             - '[[ "$(cat /tmp/live)" = "true" ]]'
-          initialDelaySeconds: 5
+          initialDelaySeconds: 60
           periodSeconds: 5
         readinessProbe:
           exec:
@@ -70,5 +70,5 @@ spec:
             - bash
             - -c
             - '[[ "$(cat /tmp/live)" = "true" ]]'
-          initialDelaySeconds: 5
+          initialDelaySeconds: 60
           periodSeconds: 5

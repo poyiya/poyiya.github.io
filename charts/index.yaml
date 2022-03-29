@@ -3,7 +3,7 @@ entries:
   fail-manytimes:
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2022-02-10T14:29:13.308086+08:00"
+    created: "2022-03-29T15:57:24.676666+08:00"
     description: A Helm chart for Kubernetes
     digest: edf4e7cb5d64ea6adad4cd9f600542acd2351315c39a4e0baff4a21703a275dc
     name: fail-manytimes
@@ -14,7 +14,17 @@ entries:
   gpu-hog:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2022-02-10T14:29:13.30863+08:00"
+    created: "2022-03-29T15:57:24.67815+08:00"
+    description: A Helm chart to produce non-stopping pytorch workloads that saturate
+      GPUs
+    digest: d6bded16981d259b584d03c1af0b58c3123f43c76a6d82394d41b70ab944105d
+    name: gpu-hog
+    urls:
+    - https://poyiya.github.io/charts/gpu-hog-0.3.1.tgz
+    version: 0.3.1
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2022-03-29T15:57:24.677201+08:00"
     description: A Helm chart to produce non-stopping pytorch workloads that saturate
       GPUs
     digest: 54821017c23f32311ee31d1b69a9c2b245ecab333c891ff482d0bb7c8e3448d4
@@ -25,7 +35,7 @@ entries:
   long-init-time:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2022-02-10T14:29:13.308773+08:00"
+    created: "2022-03-29T15:57:24.678554+08:00"
     description: A Helm chart for long init time
     digest: e4ec8953d5fb565e0c441a4dc680159ec629dc54551078701ceba8248fe051ee
     name: long-init-time
@@ -35,7 +45,7 @@ entries:
   tdcsqa-auto-nginx:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2022-02-10T14:29:13.309894+08:00"
+    created: "2022-03-29T15:57:24.679944+08:00"
     description: A Helm chart for Kubernetes
     digest: 9bf850c3e371718221b5ceb526a9b0bb8a781db3914f39666255e9a7271f2f25
     name: tdcsqa-auto-nginx
@@ -45,7 +55,7 @@ entries:
   vectoradd-app:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2022-02-10T14:29:13.311438+08:00"
+    created: "2022-03-29T15:57:24.680824+08:00"
     description: A Helm chart to exercise GPUs
     digest: 1950ef0a89c12b6fc50b0aee97bfd2c3d23a194e3bccd003d03b4addf37aebcb
     name: vectoradd-app
@@ -55,7 +65,7 @@ entries:
   wrong-image-name:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-02-10T14:29:13.313321+08:00"
+    created: "2022-03-29T15:57:24.681834+08:00"
     description: A Helm chart for Kubernetes
     digest: dbec994ff118f12ffc430d9d0a5ddded30d31709db7673cf7424797da1ccc0bb
     name: wrong-image-name
@@ -63,4 +73,4 @@ entries:
     urls:
     - https://poyiya.github.io/charts/wrong-image-name-0.1.0.tgz
     version: 0.1.0
-generated: "2022-02-10T14:29:13.307373+08:00"
+generated: "2022-03-29T15:57:24.675782+08:00"
